@@ -88,7 +88,7 @@ def start_server():
     if not server_running:
         thread = threading.Thread(target=start_main_device)
         thread.start()
-        return jsonify({"message": "Server is waiting for device connections..."}), 200
+        return jsonify({"message": "Server is waiting for SPECIFIC device connections..."}), 200
     else:
         return jsonify({"message": "Server is already running."}), 200
 
