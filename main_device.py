@@ -10,8 +10,8 @@ BUFFER_SIZE = 4096
 NUM_DEVICES = 4
 
 class MainDevice:
-    def _init_(self):
-        self.app = Flask(_name_)
+    def __init__(self):
+        self.app = Flask(__name__)
         self.server_running = False
         self.text_contents = []
 
@@ -105,6 +105,6 @@ class MainDevice:
     def device(self):
         return "THIS MAIN DEVICE"
 
-if _name_ == '_main_':
+if __name__ == '__main__':
     device = MainDevice()
     device.app.run(host='0.0.0.0', port=5001, debug=True)
